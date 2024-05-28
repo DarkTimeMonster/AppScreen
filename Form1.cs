@@ -16,15 +16,14 @@ namespace WinFormsApp2
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                // Show the Open File dialog. If the user clicks OK, load the
-                // picture that the user chose.
+                ////Данный код необходим для отоброжения файлов изображений
                 pictureBox1.Load(openFileDialog1.FileName);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Clear the picture.
+            // Данный код необходим для очистки рисунка , который вы открыли в диалоговом окне
             pictureBox1.Image = null;
         }
 
@@ -40,24 +39,22 @@ namespace WinFormsApp2
 
         private void backgroundButton_Click(object sender, EventArgs e)
         {
-            // Show the color dialog box. If the user clicks OK, change the
-            // PictureBox control's background to the color the user chose.
+            // Данный код изменяет задний фон диалогового окна
             if (colorDialog1.ShowDialog() == DialogResult.OK)
                 pictureBox1.BackColor = colorDialog1.Color;
         }
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            // Close the form.
+            // Данный код закрывает приложение
             this.Close();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            // If the user selects the Stretch check box, 
-            // change the PictureBox's
-            // SizeMode property to "Stretch". If the user clears 
-            // the check box, change it to "Normal".
+            // Данный код необходим для растяжения рисунка.
+            // Если пользователь ставит флажок растянуть то свойству SizeMode присваивается значение "Stretch" (растянуть)    
+            // Если пользователь убирает флажок с растянуть то свойству SizeMode присваивается значение “Normal” (Обычный)
             if (checkBox1.Checked)
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             else
